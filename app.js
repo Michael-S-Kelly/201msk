@@ -129,9 +129,16 @@ if (numberGuess === randNumb){
 
 var k;
 //var tCountries;
-var countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea').toUpperCase();
 var tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
-for(k=0; k<tCountries.length; k++)
+i = 1;
+j = 6;
+
+while(countries !== tCountries[k] && i < 6){
+  var countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea? You have ' + j + ' tries left.').toUpperCase();
+  for(k=0; k<tCountries.length; k++){
+    i++;
+    j--;
+  }
   if (countries === tCountries[k]){
     alert('Yes, I\'ve been to the Philipines, Qatar, Canada, and Kuwait.  I\'ve had lay-overs in Hong Kong (China), Japan, Taiwan, German, and Kuwait.  In addition, I\'ve stepped about 20ft accross the North Korean border during a tour of the DMZ.');
     score++;
@@ -144,5 +151,6 @@ for(k=0; k<tCountries.length; k++)
     //alert('You have gotten ' + score + ' correct out of 7.');
     break;
   }
+}
 
 alert('You have gotten ' + score + ' correct out of 7.');
