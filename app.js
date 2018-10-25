@@ -127,13 +127,13 @@ if (numberGuess === randNumb){
 
 
 
-var k;
+var k = 0;
 //var tCountries;
 var tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
 i = 1;
 j = 6;
 
-while(countries !== tCountries[k] && i < 6){
+while(countries != tCountries[k] && i < 6){
   var countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea? You have ' + j + ' tries left.').toUpperCase();
   for(k=0; k<tCountries.length; k++){
     i++;
