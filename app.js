@@ -18,6 +18,11 @@ var car;
 var dog;
 var numberGuess;
 var countries;
+var arrayIndex;
+var tCountries;
+var guessCount;
+var guessLeft;
+var correct;
 
 
 
@@ -28,6 +33,8 @@ var countries;
 
 
 var score = 0;
+
+//****Question 1*****
 
 function question1(){
 
@@ -46,6 +53,8 @@ function question1(){
 
 question1();
 
+//****Question 2*****
+
 function question2(){
 
   var visiting = prompt('Did I live in Japan for 3 years?(y/Y/yes/Yes or no...').toLowerCase();
@@ -63,6 +72,8 @@ function question2(){
 
 question2();
 
+//****Question 3*****
+
 function question3(){
   var sax = prompt('Is my favorite Sax player Kenny G?(y/Y/yes/Yes or no...').toLowerCase();
   console.log('sax should return inputed value ' + sax);
@@ -79,6 +90,8 @@ function question3(){
 
 question3();
 
+//****Question 4*****
+
 function question4(){
   var car = prompt('My first car was a Volvo?(y/Y/yes/Yes or no...').toLowerCase();
   console.log('car should return inputed value ' + car);
@@ -93,6 +106,8 @@ function question4(){
   }
 }
 question4();
+
+//****Question 5*****
 
 function question5(){
   var dog = prompt('Was my first dog\'s name, Fido?(y/Y/yes/Yes or no...').toLowerCase();
@@ -110,6 +125,8 @@ function question5(){
 
 console.log('dog should return inputed value ' + dog);
 question5();
+
+//****Question 6*****
 
 function question6(){
   var randNumb = 42;
@@ -161,32 +178,55 @@ function question6(){
 question6();
 
 
-function question7(){
-var k = 0;
-//var tCountries;
-var tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
-i = 1;
-j = 6;
+// ****Question 7*****
 
-while(countries != tCountries[k] && i < 6){
-  var countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea? You have ' + j + ' tries left.').toUpperCase();
-  for(k=0; k<tCountries.length; k++){
-    i++;
-    j--;
+function question7(){
+  correct = false;
+  arrayIndex = 0;
+  tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
+  guessCount = 1;
+  guessLeft = 6;
+
+  countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea?').toUpperCase();
+
+while(guessLeft) {
+  for (arrayIndex = 0; arrayIndex < tCountries.length; arrayIndex++)  {
+    if (tcountries[arrayIndex] === countries) {
+      correct = true;
+    }
   }
-  if (countries === tCountries[k]){
-    alert('Yes, I\'ve been to the Philipines, Qatar, Canada, and Kuwait.  I\'ve had lay-overs in Hong Kong (China), Japan, Taiwan, German, and Kuwait.  In addition, I\'ve stepped about 20ft accross the North Korean border during a tour of the DMZ.');
+  if (correct) {
+    alert('Correct');
     score++;
-    console.log('score should return a value 1 more than the previous value ', score);
-    //alert('You have gotten ' + score + ' correct out of 7.');
     break;
   } else {
-    alert('No, but I\'ve been to the Philipines, Qatar, Canada, and Kuwait.  I\'ve had a lay-over in Hong Kong (China), Japan, Taiwan, German, and Kuwait.  In addition, I\'ve stepped about 20ft accross the North Korean border during a tour of the DMZ.');
-    console.log('score should return the previous value ', score);
-    //alert('You have gotten ' + score + ' correct out of 7.');
-    break;
+    countries = prompt('Incorrect. Try again').toUpperCase();
+    guessLeft--;
   }
 }
+/*
+  while(countries != tCountries[tCountries] && guessCount < 6){
+    var countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea? You have ' + guessLeft + ' tries left.').toUpperCase();
+    for(arrayIndex = 0; arrayIndex < tCountries.length; arrayIndex++){
+      guessCount++;
+      guessLeft--;
+      break;
+    }
+    if (countries == tCountries[tCountries]){
+      alert('Yes, I\'ve been to the Philipines, Qatar, Canada, and Kuwait.  I\'ve had lay-overs in Hong Kong (China), Japan, Taiwan, German, and Kuwait.  In addition, I\'ve stepped about 20ft accross the North Korean border during a tour of the DMZ.');
+      score++;
+      console.log('score should return a value 1 more than the previous value ', score);
+      //alert('You have gotten ' + score + ' correct out of 7.');
+      break;
+    } 
+    if (countries != tCountries[tCountries]) {
+      alert('No, but I\'ve been to the Philipines, Qatar, Canada, and Kuwait.  I\'ve had a lay-over in Hong Kong (China), Japan, Taiwan, German, and Kuwait.  In addition, I\'ve stepped about 20ft accross the North Korean border during a tour of the DMZ.');
+      console.log('score should return the previous value ', score);
+      //alert('You have gotten ' + score + ' correct out of 7.');
+      break;
+    }
+  }
+}*/
 
 question7();
 
