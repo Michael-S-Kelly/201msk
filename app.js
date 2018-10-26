@@ -183,25 +183,26 @@ question6();
 function question7(){
   correct = false;
   arrayIndex = 0;
-  tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
+  var tCountries = ['CANADA', 'NORTH KOREA', 'HONG KONG', 'CHINA', 'JAPAN', 'QATAR', 'PHILIPPINES', 'TAIWAN', 'GERMANY', 'KUWAIT', 'IRELAND'];
   guessCount = 1;
   guessLeft = 6;
 
   countries = prompt('Can you name a country that I\'ve been to besides the United States and South Korea?').toUpperCase();
 
-while(guessLeft) {
-  for (arrayIndex = 0; arrayIndex < tCountries.length; arrayIndex++)  {
-    if (tcountries[arrayIndex] === countries) {
-      correct = true;
+  while(guessLeft) {
+    for (arrayIndex = 0; arrayIndex < tCountries.length; arrayIndex++) {
+      if (tcountries[arrayIndex] === countries) {
+        correct = true;
+      }
     }
-  }
-  if (correct) {
-    alert('Correct');
-    score++;
-    break;
-  } else {
-    countries = prompt('Incorrect. Try again').toUpperCase();
-    guessLeft--;
+    if (correct) {
+      alert('Correct');
+      score++;
+      break;
+    } else {
+      countries = prompt('Incorrect. Try again').toUpperCase();
+      guessLeft--;
+    }
   }
 }
 /*
